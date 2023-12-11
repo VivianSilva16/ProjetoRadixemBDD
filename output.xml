@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20231210 21:12:25.298" rpa="false" schemaversion="4">
+<suite id="s1" name="CarrinhoAmazon" source="C:\Users\Pichau\Desktop\Testes em BDD\CarrinhoAmazon.robot">
+<test id="s1-t1" name="Verificar se um produto está sendo inserido e removido no carrinho da Amazon" line="11">
+<kw name="Dado: que eu acesse a página da Amazon">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231210 21:12:25.509" level="INFO">Opening browser 'Chrome' to base url 'https://www.amazon.com.br/'.</msg>
+<status status="PASS" starttime="20231210 21:12:25.509" endtime="20231210 21:12:44.540"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Amazon.com.br | Tudo pra você, de A a Z.</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231210 21:12:44.546" level="INFO">Page title is 'Amazon.com.br | Tudo pra você, de A a Z.'.</msg>
+<status status="PASS" starttime="20231210 21:12:44.540" endtime="20231210 21:12:44.546"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231210 21:12:46.546" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231210 21:12:44.546" endtime="20231210 21:12:46.546"/>
+</kw>
+<status status="PASS" starttime="20231210 21:12:25.509" endtime="20231210 21:12:46.546"/>
+</kw>
+<kw name="E: Pesquise um produto na barra de busca">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id= twotabsearchtextbox</arg>
+<arg>${SearchTerm}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231210 21:12:46.547" level="INFO">Typing text 'A vida pela musica' into text field 'id= twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20231210 21:12:46.546" endtime="20231210 21:12:46.730"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=input[type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231210 21:12:46.731" level="INFO">Clicking button 'css=input[type="submit"]'.</msg>
+<status status="PASS" starttime="20231210 21:12:46.730" endtime="20231210 21:12:50.482"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Amazon.com.br : A vida pela musica</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231210 21:12:50.488" level="INFO">Page title is 'Amazon.com.br : A vida pela musica'.</msg>
+<status status="PASS" starttime="20231210 21:12:50.482" endtime="20231210 21:12:50.488"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231210 21:12:52.488" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231210 21:12:50.488" endtime="20231210 21:12:52.488"/>
+</kw>
+<status status="PASS" starttime="20231210 21:12:46.546" endtime="20231210 21:12:52.488"/>
+</kw>
+<kw name="E:Clique no ícone do produto">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${product_element}</var>
+<arg>//*[contains(@alt,'A vida pela música')]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231210 21:12:52.507" level="INFO">${product_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="fa50b78e5ce679626b3e0d9753fd3b59", element="6211A80B0AA3DA165D1E59E28062DFB0_element_44")&gt;</msg>
+<status status="PASS" starttime="20231210 21:12:52.489" endtime="20231210 21:12:52.507"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${product_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231210 21:12:52.507" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="fa50b78e5ce679626b3e0d9753fd3b59", element="6211A80B0AA3DA165D1E59E28062DFB0_element_44")&gt;'.</msg>
+<status status="PASS" starttime="20231210 21:12:52.507" endtime="20231210 21:12:57.983"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>A vida pela música | Amazon.com.br</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231210 21:12:57.988" level="INFO">Page title is 'A vida pela música | Amazon.com.br'.</msg>
+<status status="PASS" starttime="20231210 21:12:57.983" endtime="20231210 21:12:57.988"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231210 21:12:59.989" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231210 21:12:57.989" endtime="20231210 21:12:59.989"/>
+</kw>
+<status status="PASS" starttime="20231210 21:12:52.489" endtime="20231210 21:12:59.989"/>
+</kw>
+<kw name="E: Clique em adicionar ao carrinho">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=add-to-cart-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231210 21:12:59.990" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<status status="PASS" starttime="20231210 21:12:59.990" endtime="20231210 21:13:01.702"/>
+</kw>
+<status status="PASS" starttime="20231210 21:12:59.990" endtime="20231210 21:13:01.703"/>
+</kw>
+<kw name="E: Clique em ir para o carrinho">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=sw-gtc</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231210 21:13:01.704" level="INFO">Clicking element 'id=sw-gtc'.</msg>
+<status status="PASS" starttime="20231210 21:13:01.703" endtime="20231210 21:13:05.180"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Carrinho de compras da Amazon.com</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231210 21:13:05.184" level="INFO">Page title is 'Carrinho de compras da Amazon.com'.</msg>
+<status status="PASS" starttime="20231210 21:13:05.180" endtime="20231210 21:13:05.184"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231210 21:13:07.186" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231210 21:13:05.184" endtime="20231210 21:13:07.186"/>
+</kw>
+<status status="PASS" starttime="20231210 21:13:01.703" endtime="20231210 21:13:07.186"/>
+</kw>
+<kw name="E: Na página do carrinho, clique em Excluir">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@value='Excluir']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231210 21:13:07.187" level="INFO">Clicking element 'xpath=//input[@value='Excluir']'.</msg>
+<status status="PASS" starttime="20231210 21:13:07.186" endtime="20231210 21:13:07.277"/>
+</kw>
+<status status="PASS" starttime="20231210 21:13:07.186" endtime="20231210 21:13:07.277"/>
+</kw>
+<kw name="Então: O Item colocado antes será removido do carrinho">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Carrinho de compras da Amazon.com</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231210 21:13:07.286" level="INFO">Page title is 'Carrinho de compras da Amazon.com'.</msg>
+<status status="PASS" starttime="20231210 21:13:07.278" endtime="20231210 21:13:07.286"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231210 21:13:09.287" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231210 21:13:07.286" endtime="20231210 21:13:09.287"/>
+</kw>
+<status status="PASS" starttime="20231210 21:13:07.278" endtime="20231210 21:13:09.287"/>
+</kw>
+<status status="PASS" starttime="20231210 21:12:25.508" endtime="20231210 21:13:09.288"/>
+</test>
+<status status="PASS" starttime="20231210 21:12:25.300" endtime="20231210 21:13:09.289"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CarrinhoAmazon">CarrinhoAmazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
